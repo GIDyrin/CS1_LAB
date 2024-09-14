@@ -1,10 +1,19 @@
 ﻿@page
 @model IndexModel
+@using CS1_LAB.Models
 @{
     ViewData["Title"] = "Home page";
+    PersonalComputer pcInfo = new PersonalComputer("AMD Ryzen 5 4600h", 16, 512, 3);
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Made by Gleb Dyrin, learn about ASP.NET on <a href="https://docs.microsoft.com/aspnet/core">here</a>.</p>
+    <p>Information about my computer: </p>
+    <ul>
+        <li>Processor: @pcInfo.Processor</li>
+        <li>RAM: @pcInfo.RamSize GB</li>
+        <li>Storage: @pcInfo.StorageSize GB</li>
+        <li>USBs ports: @pcInfo.UsbPortCounts</li>
+    </ul>
 </div>
